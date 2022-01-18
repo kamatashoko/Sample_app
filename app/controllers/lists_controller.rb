@@ -19,12 +19,16 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
-    List.find(1)
-    List.find(2)
   end
 
   def edit
     @list = List.find(params[:id])
+  end
+  
+  def destroy
+    list = List.find(params[:id])  
+    list.destroy
+    redirect_to '/lists'
   end
   
   def update
